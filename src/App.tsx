@@ -52,13 +52,24 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Source Sans Pro', sns-serif;
+  background-color: ${props => props.theme.bgColor};
+  color: ${(props) => props.theme.textColor};
+}
+a {
+  text-decoration: none;
+}
 `;
 
 function App() {
   return  (
     <>
       <GlobalStyle />
-      <Router />;
+      <Router />
     </>
   )
 }
