@@ -1,7 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-import Router from './Router';
-
-
+import { createGlobalStyle } from "styled-components";
+import Router from "./Router";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
@@ -57,7 +56,7 @@ table {
 }
 body {
   font-family: 'Source Sans Pro', sns-serif;
-  background-color: ${props => props.theme.bgColor};
+  background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor};
 }
 a {
@@ -67,12 +66,13 @@ a {
 `;
 
 function App() {
-  return  (
+  return (
     <>
       <GlobalStyle />
       <Router />
+      <ReactQueryDevtools initialIsOpen={true} />
     </>
-  )
+  );
 }
 
 export default App;
