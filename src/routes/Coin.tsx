@@ -165,7 +165,6 @@ function Coin() {
   return (
     <Container>
       <Header>
-        <Title>{state?.name || "Loading..."}</Title>
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
