@@ -20,8 +20,11 @@ function Coins() {
   return (
     <Container>
       <Helmet>
-        <title>코인</title>
+        <title>Coin Tracker</title>
       </Helmet>
+      <Header>
+        <Title>Coin Tracker</Title>
+      </Header>
       {isLoading ? (
         <Loader>Loading...</Loader>
       ) : (

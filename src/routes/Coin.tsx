@@ -4,15 +4,15 @@ import {
   useLocation,
   useParams,
   useRouteMatch,
+  Link,
 } from "react-router-dom";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Chart from "./Chart";
 import Price from "./Price";
 import { useQuery } from "react-query";
 import { fetchCoinInfo } from "./api";
 import { Helmet } from "react-helmet";
-import { IconName } from "react-icons/fa";
+import { IoIosArrowBack } from "react-icons/io";
 
 interface RouteParams {
   coinId: string;
@@ -102,12 +102,14 @@ function Coin() {
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </title>
       </Helmet>
-      <Header>
-        <div></div>
+      <Link to="/">
+        <IoIosArrowBack style={{ position: "fixed", marginTop: "50px" }} />
+      </Link>
+      <HeaderTop>
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
-      </Header>
+      </HeaderTop>
       {loading ? (
         <Loader>Loading...</Loader>
       ) : (
@@ -177,7 +179,7 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const Header = styled.header`
+const HeaderTop = styled.header`
   height: 15vh;
   display: flex;
   justify-content: center;
