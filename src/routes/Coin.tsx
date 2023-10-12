@@ -108,6 +108,7 @@ function Coin() {
 
       setInfo(infoData);
       setPriceInfo(priceData);
+      setLoading(false);
     })();
   }, []);
 
