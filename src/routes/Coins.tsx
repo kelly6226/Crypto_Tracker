@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useQuery } from "react-query";
 import { fetchCoins } from "./api";
+import { Helmet } from "react-helmet";
 
 interface ICoin {
   id: string;
@@ -18,9 +19,9 @@ function Coins() {
 
   return (
     <Container>
-      <Header>
-        <Title>코인</Title>
-      </Header>
+      <Helmet>
+        <title>코인</title>
+      </Helmet>
       {isLoading ? (
         <Loader>Loading...</Loader>
       ) : (
